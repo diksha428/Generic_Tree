@@ -1,27 +1,26 @@
 # Generic_Tree
 
-import java.io.*;
-import java.util.*;
 
+import java.io.*;
+import java.util.*; 
+                                                      // Node Class create 
 public class Main {
   private static class Node {
     int data;
-    ArrayList<Node> children = new ArrayList<>();
+    ArrayList<Node> children = new ArrayList<>();        
   }
-
+                                                        //Node Display
   public static void display(Node node) {
-    String str = node.data + " -> ";
+    System.out.println(node.data + " -> ");
     for (Node child : node.children) {
-      str += child.data + ", ";
+      System.out.println(child.data + ", ");
     }
-    str += ".";
-    System.out.println(str);
-
+    System.out.println(".");
     for (Node child : node.children) {
       display(child);
     }
   }
-
+                                                        //Node Construct
   public static Node construct(int[] arr) {
     Node root = null;
 
@@ -45,7 +44,7 @@ public class Main {
 
     return root;
   }
-
+                                                             //Size of Node
   public static int size(Node node) {
     int count = 1;
 
@@ -56,7 +55,7 @@ public class Main {
 
     return count;
   }
-
+                                                            //Max Size of Node 
   public static int max(Node node) {
     // write your code here
     int max = node.data;
