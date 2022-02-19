@@ -1,0 +1,11 @@
+# Generic_Tree
+
+ public static void mirror(Node node){
+    // write your code here
+    if(node == null)
+    return;
+    for(Node child: node.children){
+         mirror(child);
+    }
+      Collections.reverse(node.children);
+  }
