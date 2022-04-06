@@ -1,0 +1,14 @@
+public static int lca(Node node, int d1, int d2) {
+    // write your code here
+    ArrayList<Integer>Lca1 = nodeToRootPath(node,d1);
+    ArrayList<Integer>Lca2 = nodeToRootPath(node,d2);
+
+    int i = Lca1.size() - 1;
+    int j = Lca2.size() - 1;
+
+    while(i >= 0 && j >= 0 && Lca1.get(i) == Lca2.get(j)) {
+      i--;
+      j--;
+    }
+    return Lca1.get(i+1);
+  }
